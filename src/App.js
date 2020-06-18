@@ -4,6 +4,7 @@ import PokeForm from './PokeForm';
 import DisplayInfo from './DisplayInfo'
 // import DisplayAll from './DisplayAll'
 import PokemonList from './PokemonList'
+import Collection from './Collection'
 
 
 
@@ -15,15 +16,9 @@ class App extends React.Component {
     viewAllVis: false,
     displayVis: false,
     collectionVis: false,
-   
   }
   }
 
- 
-
-
-   
-  //}
   handleSubmit(event) {
     event.preventDefault();
     let name = event.target.searchBox.value.toLowerCase();
@@ -72,9 +67,13 @@ class App extends React.Component {
       
       <button className ="Reset" onClick={()=>this.setState({ viewAllVis: false, displayVis: false,collectionVis: false})}>Reset All</button>
 
+      <button className ="View Collection" onClick={()=>this.setState({viewAllVis: false, displayVis: false,collectionVis: true})}>View Collection</button>
+
       {this.state.displayVis ? <DisplayInfo name ={this.state.pokeName} type={this.state.pokeType} img={this.state.pokeImage} /> : null}
       
       {this.state.viewAllVis ? <PokemonList /> : null}
+
+      {this.state.collectionVis ? <Collection /> : null}
     </div>
     )
   }

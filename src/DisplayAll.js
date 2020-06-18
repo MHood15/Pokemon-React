@@ -34,16 +34,10 @@ class DisplayAll extends React.Component{
     } 
     }
 
-
-
- 
-
     render(){   
     let everything;
-    // console.log("Array Map: ", pokeArray.map((name)=> name))
     
-    everything = <div>{pokeArray.map((name, image)=><DisplayInfo name={name} img = {image}/>)}</div> //<button type = "radio">Add to Collection</button>
-     console.log("Everything: ", everything)
+    everything = <div>{pokeArray.map((name, image)=><DisplayInfo name={name} img = {image}/>)}</div> 
     
         return(
             <ul>
